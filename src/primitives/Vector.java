@@ -37,9 +37,10 @@ public class Vector extends Point {
     }
 
     /**
-     * return new vector-our vector+v
+     * add two vectors
      *
      * @param v vector to add
+     * @return new vector-our vector+v
      */
     public Vector add(Vector v) /*throws Exception*/ {
         try {
@@ -50,9 +51,10 @@ public class Vector extends Point {
     } /**/
 
     /**
-     * return new vector-our vector with scalar multiplication
+     * scale- multiplication of scalar and vector
      *
      * @param d scalar for multiplication
+     * @return new vector-our vector with scalar multiplication
      */
     public Vector scale(double d) throws Exception {
         try {
@@ -63,9 +65,10 @@ public class Vector extends Point {
     }
 
     /**
-     * return cross product between our vector and vector v (linear)
+     * crossProduct- between two vectors
      *
      * @param v vector for cross product
+     * @return cross product between our vector and vector v (linear)
      */
     public Vector crossProduct(Vector v) throws Exception {
         try {
@@ -77,21 +80,27 @@ public class Vector extends Point {
     }
 
     /**
-     * return length of v, squared
+     * lengthSquared
+     *
+     * @return length of v, squared
      */
     public double lengthSquared() {
         return dotProduct(this);
     }
 
     /**
-     * return length of v
+     * length
+     *
+     * @return length of v
      */
     public double length() {
         return Math.sqrt(lengthSquared());
     }
 
     /**
-     * return normalize vector of our vector
+     * normalize vector
+     *
+     * @return normalize vector of our vector
      */
     public Vector normalize() {
         try {
@@ -103,9 +112,10 @@ public class Vector extends Point {
     }
 
     /**
-     * return dot product between our vector and vector other (linear)
+     * dotProduct
      *
      * @param other vector for dot product
+     * @return dot product between our vector and vector other (linear)
      */
     public double dotProduct(Vector other) {
         return xyz.d1 * other.xyz.d1 + xyz.d2 * other.xyz.d2 + xyz.d3 * other.xyz.d3;
