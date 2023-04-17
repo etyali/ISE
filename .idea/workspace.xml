@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml">
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="targil1">
+      <change afterPath="$PROJECT_DIR$/src/unittest/geometries/CylinderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/geometries/PolygonTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/geometries/TubeTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/primitives/VectorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ISE5783_7998_8728.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ISE5783_7998_8728.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,10 +25,17 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -45,18 +60,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="geometries" />
@@ -66,8 +88,16 @@
       <recent name="C:\ISE\ISE5783_7998_8728\src\geometries" />
       <recent name="C:\ISE\ISE5783_7998_8728\src\primitives" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="unittest" />
+      <recent name="geometries" />
+      <recent name="primitives" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.Double3Test.testConstructor">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="test.Main" />
       <module name="ISE5783_7998_8728" />
@@ -81,8 +111,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Double3Test.testConstructor" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.primitives.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest" />
+      <option name="MAIN_CLASS_NAME" value="unittest.Double3Test" />
+      <option name="METHOD_NAME" value="testConstructor" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Double3Test.testConstructor" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -97,7 +144,8 @@
       <updated>1677159219764</updated>
       <workItem from="1677159220244" duration="6337000" />
       <workItem from="1677416379985" duration="85000" />
-      <workItem from="1677488840637" duration="22816000" />
+      <workItem from="1677488840637" duration="24624000" />
+      <workItem from="1681664383663" duration="5372000" />
     </task>
     <task id="LOCAL‎-00001" summary="base geometries">
       <created>1679850469970</created>
@@ -134,17 +182,42 @@
       <option name="project" value="LOCAL‎" />
       <updated>1680530626052</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎-00006" summary="targil1">
+      <created>1680530943659</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1680530943659</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="true" />
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="base geometries" />
     <MESSAGE value="base and radial geometries" />
     <MESSAGE value="final targil1" />
     <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+    <MESSAGE value="targil1" />
+    <option name="LAST_COMMIT_MESSAGE" value="targil1" />
   </component>
 </project>
