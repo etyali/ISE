@@ -1,7 +1,9 @@
 package geometries;
-import java.util.List;
+
 import primitives.Point;
 import primitives.Ray;
+
+import java.util.List;
 
 public class Triangle extends Polygon {
     /**
@@ -15,5 +17,9 @@ public class Triangle extends Polygon {
             throw new IllegalArgumentException("A Triangle can't have other than 3 vertices");
         }
     }
-    public List<Point> findIntsersections(Ray ray){return null;}
+
+    @Override
+    public List<Point> findIntsersections(Ray ray) {
+        return null;
+    }
 }

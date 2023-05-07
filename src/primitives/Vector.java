@@ -6,7 +6,7 @@ public class Vector extends Point {
      *
      * @param xyz number value for the point
      */
-    Vector(Double3 xyz) throws Exception {
+    public Vector(Double3 xyz) throws IllegalArgumentException {
         super(xyz);
         if (xyz.equals(Double3.ZERO)) {
             throw new IllegalArgumentException("can not construct the zero vector");
@@ -20,7 +20,7 @@ public class Vector extends Point {
      * @param y second number value for the vector point
      * @param z third number value for the vector point
      */
-    public Vector(double x, double y, double z) throws Exception {
+    public Vector(double x, double y, double z) throws IllegalArgumentException {
         super(x, y, z);
         if (xyz.equals(Double3.ZERO)) {
             throw new IllegalArgumentException("can not construct the zero vector");

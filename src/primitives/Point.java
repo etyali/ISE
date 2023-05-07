@@ -4,14 +4,14 @@ import java.util.Objects;
 import java.math.*;
 
 public class Point {
-    final Double3 xyz;
+    final public Double3 xyz;
 
     /**
      * Constructor to initialize point based object the same number values
      *
      * @param xyz number value for the point
      */
-    Point(Double3 xyz) {
+    public Point(Double3 xyz) {
         this.xyz = xyz;
     }
 

@@ -1,8 +1,6 @@
 package geometries;
 
-import primitives.Point;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
 
 public class Cylinder extends Tube {
     public double height;
@@ -14,18 +12,36 @@ public class Cylinder extends Tube {
      * @param axisRay will be the ray
      * @param height  will be the height
      */
-    public Cylinder(double radius, Ray axisRay, double height) {
+    public Cylinder(Ray axisRay, double height, double radius) {
         super(radius, axisRay);
         this.height = height;
     }
 
+
     /**
      * getNormal
      *
-     * @param point- to compute normal
+     * @param p- to compute normal
      * @return null for now
      */
-    public Vector getNormal(Point point) {
-        return null;
+    public Vector getNormal(Point p) throws Exception {
+
+        Point p0 = axisRay.getP0();
+        Vector v = axisRay.getDir();
+        double radius = this.radius;
+
+        if (p.distance(p0) <= radius) {
+            return v;
+        }
+
+        Vector vOfAnotherBase = axisRay.getDir().scale(height);
+        Point p1 = p0.add(vOfAnotherBase);
+
+        if (p.distance(p1) <= radius) {
+            return v;
+        }
+
+
+        return super.getNormal(p);
     }
 }

@@ -17,7 +17,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class PolygonTest {
     @Test
-    public void testConstructor() {
+    public void testConstructor() throws Exception {
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: Correct concave quadrangular with vertices in correct order
@@ -67,7 +67,7 @@ class PolygonTest {
      * Test method for {@link geometries.Polygon#getNormal(primitives.Point)}.
      */
     @Test
-    public void testGetNormal() {
+    public void testGetNormal() throws Exception {
         // ============ Equivalence Partitions Tests ==============
         // TC01: There is a simple single test here - using a quad
         Point[] pts =
@@ -84,5 +84,4 @@ class PolygonTest {
             assertTrue(isZero(result.dotProduct(pts[i].subtract(pts[i == 0 ? 3 : i - 1]))),
                     "Polygon's normal is not orthogonal to one of the edges");
     }
-}
 }
