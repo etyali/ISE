@@ -4,10 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="new Intersectable interface">
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="new test find intersection plane">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/CylinderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/CylinderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +177,14 @@
       <workItem from="1677416379985" duration="85000" />
       <workItem from="1677488840637" duration="13904000" />
     </task>
+    <task id="LOCAL‎-00001" summary="new test find intersection plane">
+      <created>1683529563299</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1683529563299</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -177,16 +192,12 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish 2 exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish 2 exercise" />
+    <MESSAGE value="new test find intersection plane" />
+    <option name="LAST_COMMIT_MESSAGE" value="new test find intersection plane" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/geometries/Tube.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/unittest/geometries/TubeTest.java</url>
           <line>14</line>

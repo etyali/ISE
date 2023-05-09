@@ -24,11 +24,11 @@ class SphereTest {
     }
 
     @Test
-    void testFindIntsersections() {
+    void testFindIntersections() {
         // ============ Equivalence Partitions Tests ==============
         // TC01: Ray starts inside the sphere (1 point)
 
-        assertEquals(new Point(1.5,0.98,0.89),s.findIntsersections(new Ray(new Point(1,0,1), new Vector(0.5,0.98,-0.11))), "Wrong point result of intersection, ray starts inside the sphere (1 point)");
+        assertEquals(new Point(1.5,0.98,0.89),s.findIntersections(new Ray(new Point(1,0,1), new Vector(0.5,0.98,-0.11))), "Wrong point result of intersection, ray starts inside the sphere (1 point)");
 
         //TC02: Ray
 
