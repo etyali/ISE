@@ -27,6 +27,7 @@ class PlaneTest {
 
     }
 
+    @Test
     public void testFindIntsersections() throws Exception {
         Plane plane = new Plane(new Point(-3, -3, 1), new Point(3, -3, 1),
                 new Point(1, 5, 1));
@@ -39,7 +40,7 @@ class PlaneTest {
         assertEquals(new Point(1, 3.5, 1), result1.get(0));
 
         // TC02: Ray's line does not intersect the plane (0 intersection)
-        assertNull(plane.findIntersections(new Ray(new Point(-0.81838, 0.48601, 0), new Vector(1.82, 1.6, 1))),
+        assertNull(plane.findIntersections(new Ray(new Point(-1, 0.5, 2), new Vector(1.82, 1.6, 1))),
                 "Ray's line out of plane");
 
         // =============== Boundary Values Tests ==================
