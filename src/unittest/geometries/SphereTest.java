@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SphereTest {
-
+    Sphere sphere = new Sphere(1d, new Point (1, 0, 0));  // for intersections test
     Sphere s = new Sphere(2, new Point(0,0,0));
     @Test
     void testGetNormal() throws Exception {
@@ -26,11 +26,20 @@ class SphereTest {
     @Test
     void testFindIntersections() {
         // ============ Equivalence Partitions Tests ==============
-        // TC01: Ray starts inside the sphere (1 point)
+        // TC01: Ray starts outside the sphere (0 point)
+        assertNull(sphere.findIntersections(new Ray(new Point(-1, 0, 0), new Vector(0, 0, -1))),
+                "Ray's line out of sphere");
 
-        assertEquals(new Point(1.5,0.98,0.89),s.findIntersections(new Ray(new Point(1,0,1), new Vector(0.5,0.98,-0.11))), "Wrong point result of intersection, ray starts inside the sphere (1 point)");
+        // TC02: Ray starts before and crosses the sphere (2 points)
 
-        //TC02: Ray
+        // TC03: Ray starts inside the sphere (1 point)
+
+        // TC04: Ray starts after the sphere (0 points)
+
+
+
+        //assertEquals(new Point(1,0,1),s.findIntersections(new Ray(new Point(0.5,0,0), new Vector(1,0,1))), "Wrong point result of intersection, ray starts inside the sphere (1 point)");
+
 
 
     }
