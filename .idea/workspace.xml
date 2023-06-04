@@ -4,19 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="new Intersectable interface">
-      <change afterPath="$PROJECT_DIR$/src/primitives/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/renderer/ImageWriter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/RenderTests.java" afterDir="false" />
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="integration">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,14 +171,34 @@
       <workItem from="1677416379985" duration="85000" />
       <workItem from="1677488840637" duration="13904000" />
     </task>
+    <task id="LOCAL‎-00001" summary="integration">
+      <created>1685879631279</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL‎-00001" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1685879631279</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish 2 exercise" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish 2 exercise" />
+    <MESSAGE value="integration" />
+    <option name="LAST_COMMIT_MESSAGE" value="integration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
