@@ -91,5 +91,5 @@ public class Polygon implements Geometry {
     public Vector getNormal(Point point) {
         return plane.getNormal(point);
     }
-    public List<Point> findIntersections(Ray ray){return null;} ////////////////////////////////
+    public List<Point> findIntersections(Ray ray){return null;}
 }

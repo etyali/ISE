@@ -36,16 +36,21 @@ public class Vector extends Point {
         return false;
     }
 
+    @Override
+    public String toString() {
+        return "Vector " + xyz;
+    }
+
     /**
      * add two vectors
      *
      * @param v vector to add
      * @return new vector-our vector+v
      */
-    public Vector add(Vector v) /*throws Exception*/ {
+    public Vector add(Vector v) throws IllegalArgumentException {
         try {
             return new Vector(xyz.add(v.xyz));
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException();
         }
     } /**/
@@ -56,10 +61,10 @@ public class Vector extends Point {
      * @param d scalar for multiplication
      * @return new vector-our vector with scalar multiplication
      */
-    public Vector scale(double d) throws Exception {
+    public Vector scale(double d) throws IllegalArgumentException {
         try {
             return new Vector(xyz.scale(d));
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException();
         }
     }
@@ -113,7 +118,6 @@ public class Vector extends Point {
 
     /**
      * dotProduct
-     *
      * @param other vector for dot product
      * @return dot product between our vector and vector other (linear)
      */

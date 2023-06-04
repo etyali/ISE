@@ -7,5 +7,5 @@ public interface Geometry extends Intersectable{
     /**
      * to do in implements classes
      */
-    Vector getNormal(Point p) throws Exception;
+    Vector getNormal(Point p) throws IllegalArgumentException;
 }

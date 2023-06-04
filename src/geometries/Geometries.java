@@ -11,7 +11,7 @@ public class Geometries {
 
     public Geometries() {
         this.geometriesList = new ArrayList<>();
-    } //null;  רשימה ריקה?
+    }
 
     public Geometries(Intersectable... geometries) {
     }

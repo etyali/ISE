@@ -11,15 +11,23 @@ public class Ray {
         this.dir = dir.normalize();
     }
 
+    /**
+     * Get the start point of the ray
+     * @return P0 - the start point of ray
+     */
     public Point getP0() {
         return p0;
     }
 
+    /**
+     * Get the direction of the ray
+     * @return The direction's vector
+     */
     public Vector getDir() {
         return dir;
     }
 
-    public Point getPoint(double t) throws Exception {
+    public Point getPoint(double t) throws IllegalArgumentException {
         return p0.add(dir.scale(t));
     }
 

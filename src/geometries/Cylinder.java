@@ -24,7 +24,7 @@ public class Cylinder extends Tube {
      * @param p- to compute normal
      * @return null for now
      */
-    public Vector getNormal(Point p) throws Exception {
+    public Vector getNormal(Point p) throws IllegalArgumentException {
 
         Point p0 = axisRay.getP0();
         Vector v = axisRay.getDir();

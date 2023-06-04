@@ -4,7 +4,10 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
+import javax.imageio.event.IIOReadProgressListener;
 import java.util.List;
+
+import static primitives.Util.*;
 
 public class Plane implements Geometry {
     public Point p0;
@@ -28,7 +31,7 @@ public class Plane implements Geometry {
      * @param p2 will be the d2 of base point
      * @param p3 will be the d3 of base point
      */
-    public Plane(Point p1, Point p2, Point p3) throws Exception {
+    public Plane(Point p1, Point p2, Point p3) throws IllegalArgumentException {
         Vector v1 = p2.subtract(p1);
         Vector v2 = p3.subtract(p1);
         normal = (v1.crossProduct(v2)).normalize();
@@ -50,7 +53,26 @@ public class Plane implements Geometry {
     }
 
     @Override
-    public List<Point> findIntsersections(Ray ray) {
-        return null;
+    public List<Point> findIntersections(Ray ray) throws IllegalArgumentException {
+        Point ray_point = ray.p0;
+        Vector ray_vector = ray.dir;
+        double t;
+        double nv = normal.dotProduct(ray_vector);  // n * v
+        if (ray_point.equals(p0)) {
+            return null;
+        }  // ray starts in plane's point
+        // ray parallel to plane
+        if (isZero(nv))  // ray orthogonal to plane
+        {
+            t = alignZero(normal.dotProduct(p0.subtract(ray_point)));
+        } else {
+            t = alignZero((normal.dotProduct(p0.subtract(ray_point))) / nv);
+        }
+        if (t <= 0)  // ray start in/after plane
+        {
+            return null;
+        }
+        List<Point> intersections = List.of(ray.getPoint(t));
+        return intersections;
     }
 }

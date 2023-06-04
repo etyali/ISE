@@ -55,7 +55,7 @@ public class Point {
      *
      * @param p the tail of the vector (xyz is the head of the vector)
      */
-    public Vector subtract(Point p) throws Exception {
+    public Vector subtract(Point p) throws IllegalArgumentException {
         return new Vector(xyz.subtract(p.xyz));
     }
 
@@ -84,6 +84,6 @@ public class Point {
     }
 
     public double getX() {
-       return getX();
+        return xyz.d1;
     }
 }
