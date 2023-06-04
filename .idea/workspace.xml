@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="find intersection plane">
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="new Intersectable interface">
+      <change afterPath="$PROJECT_DIR$/src/primitives/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/renderer/ImageWriter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/RenderTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/PlaneTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -16,9 +26,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,9 +65,11 @@
       <recent name="geometries" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ISE\ISE\src\unittest\renderer" />
+      <recent name="C:\ISE\ISE\src\renderer" />
+      <recent name="C:\ISE\ISE\src\primitives" />
+      <recent name="C:\ISE\ISE\src\unittest" />
       <recent name="C:\ISE\ISE5783_7998_8728\src\test" />
-      <recent name="C:\ISE\ISE5783_7998_8728\src\geometries" />
-      <recent name="C:\ISE\ISE5783_7998_8728\src\primitives" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -66,7 +78,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SphereTest.testFindIntersections">
+  <component name="RunManager" selected="JUnit.CylinderTest.testGetNormal">
     <configuration name="CylinderTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
@@ -78,22 +90,6 @@
       <option name="PACKAGE_NAME" value="unittest.geometries" />
       <option name="MAIN_CLASS_NAME" value="unittest.geometries.CylinderTest" />
       <option name="METHOD_NAME" value="testGetNormal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PlaneTest.testFindIntsersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.geometries" />
-      <option name="MAIN_CLASS_NAME" value="unittest.geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testFindIntsersections" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -115,7 +111,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SphereTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SphereTest.getNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
         <pattern>
@@ -125,7 +121,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="unittest.geometries" />
       <option name="MAIN_CLASS_NAME" value="unittest.geometries.SphereTest" />
-      <option name="METHOD_NAME" value="testFindIntersections" />
+      <option name="METHOD_NAME" value="getNormal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -147,13 +143,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="TubeTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.geometries.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.geometries" />
+      <option name="MAIN_CLASS_NAME" value="unittest.geometries.TubeTest" />
+      <option name="METHOD_NAME" value="testGetNormal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SphereTest.testFindIntersections" />
-        <item itemvalue="JUnit.SphereTest.testGetNormal" />
-        <item itemvalue="JUnit.PlaneTest.testFindIntsersections" />
         <item itemvalue="JUnit.CylinderTest.testGetNormal" />
         <item itemvalue="JUnit.PlaneTest.testGetNormal" />
+        <item itemvalue="JUnit.SphereTest.testGetNormal" />
+        <item itemvalue="JUnit.TubeTest.testGetNormal" />
+        <item itemvalue="JUnit.SphereTest.getNormal" />
       </list>
     </recent_temporary>
   </component>
@@ -168,31 +180,7 @@
       <workItem from="1677159220244" duration="6337000" />
       <workItem from="1677416379985" duration="85000" />
       <workItem from="1677488840637" duration="13904000" />
-      <workItem from="1684138254651" duration="1919000" />
-      <workItem from="1684693926388" duration="2347000" />
     </task>
-    <task id="LOCAL‎-00001" summary="new test find intersection plane">
-      <created>1683529563299</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL‎-00001" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1683529563299</updated>
-    </task>
-    <task id="LOCAL‎-00002" summary="test find intersection plane">
-      <created>1683669211782</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL‎-00002" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1683669211782</updated>
-    </task>
-    <task id="LOCAL‎-00003" summary="find intersection plane">
-      <created>1683804270029</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1683804270029</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -200,14 +188,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish 2 exercise" />
-    <MESSAGE value="new test find intersection plane" />
-    <MESSAGE value="test find intersection plane" />
-    <MESSAGE value="find intersection plane" />
-    <option name="LAST_COMMIT_MESSAGE" value="find intersection plane" />
+    <option name="LAST_COMMIT_MESSAGE" value="finish 2 exercise" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/geometries/Tube.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/unittest/geometries/TubeTest.java</url>
           <line>14</line>

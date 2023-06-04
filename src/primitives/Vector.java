@@ -70,11 +70,11 @@ public class Vector extends Point {
      * @param v vector for cross product
      * @return cross product between our vector and vector v (linear)
      */
-    public Vector crossProduct(Vector v) throws Exception {
+    public Vector crossProduct(Vector v) throws IllegalArgumentException {
         try {
             return new Vector(xyz.d2 * v.xyz.d3 - xyz.d3 * v.xyz.d2, xyz.d3 * v.xyz.d1 - xyz.d1 * v.xyz.d3,
                     xyz.d1 * v.xyz.d2 - xyz.d2 * v.xyz.d1);
-        } catch (Exception e) {
+        } catch (IllegalArgumentException e) {
             throw new IllegalArgumentException();
         }
     }

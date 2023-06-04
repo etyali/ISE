@@ -6,13 +6,6 @@ import primitives.Vector;
 
 import java.util.List;
 
-import primitives.Util;
-
-import java.math.*;
-
-import static primitives.Util.alignZero;
-import static primitives.Util.isZero;
-
 public class Plane implements Geometry {
     public Point p0;
     public Vector normal;
@@ -57,29 +50,7 @@ public class Plane implements Geometry {
     }
 
     @Override
-    public List<Point> findIntersections(Ray ray) throws Exception {
-        Point ray_point = ray.p0;
-        Vector ray_vector = ray.dir;
-        double t;
-        double nv = normal.dotProduct(ray_vector);  // n * v
-        if (ray_point.equals(p0)) {
-            return null;
-        }  // ray starts in plane's point
-        if (isZero(nv))  // ray orthogonal to plane
-        {
-            t = alignZero(normal.dotProduct(p0.subtract(ray_point)));
-            if (t <= 0)  // ray start in/after plane
-            {
-                return null;
-            }
-        } else {
-            t = alignZero((normal.dotProduct(p0.subtract(ray_point))) / nv);
-            if (t <= 0)  // ray parallel to plane
-            {
-                return null;
-            }
-        }
-        List<Point> intersections = List.of(ray.getPoint(t));
-        return intersections;
+    public List<Point> findIntsersections(Ray ray) {
+        return null;
     }
 }
