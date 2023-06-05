@@ -41,10 +41,11 @@ public class Camera {
     private double height;
     //-----------------------------------------------------------
     //CONSTRUCTOR
+
     /**
      * constructor to initialize camera
      *
-     * @param p0  - camera's location
+     * @param p0   - camera's location
      * @param v_to - camera's towards direction
      * @param v_up - camera's up direction
      */
@@ -61,11 +62,12 @@ public class Camera {
         this.v_up = v_up.normalize();
 
         //create v_right
-        v_right = v_to.crossProduct(v_up);
+        v_right = v_to.crossProduct(v_up).normalize();
     }
 
     //-----------------------------------------------------------
     //GETTERS
+
     /**
      * Get p0
      *
@@ -74,6 +76,7 @@ public class Camera {
     public Point getP0() {
         return p0;
     }
+
     /**
      * Get v_to
      *
@@ -130,15 +133,15 @@ public class Camera {
 
     //-----------------------------------------------------------
     //SETTERS
+
     /**
      * Set view plane size
      *
-     * @param width The width of the view plane
+     * @param width  The width of the view plane
      * @param height The height of the view plane
      * @return camera instance
      */
-    public Camera setVPSize(double width, double height)
-    {
+    public Camera setVPSize(double width, double height) {
         this.width = width;
         this.height = height;
 
@@ -151,14 +154,21 @@ public class Camera {
      * @param distance distance between camara and view plane
      * @return camera instance
      */
-    public Camera setVPDistance(double distance)
-    {
+    public Camera setVPDistance(double distance) {
         this.distance = distance;
         return this;
     }
 
-    public Ray constructRay(int nX, int nY, int j, int i)
-    {
+    /**
+     * construct Ray - creat ray in the given resolution
+     *
+     * @param Nx number of columns
+     * @param Ny number of rows
+     * @param j  index of pixel (column)
+     * @param i  index of pixel (rows)
+     * @return null
+     */
+    public Ray constructRay(int Nx, int Ny, int j, int i) {
         return null;
     }
 
