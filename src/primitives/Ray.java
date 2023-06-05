@@ -1,6 +1,6 @@
 package primitives;
 
-import java.util.Objects;
+import java.util.*;
 
 public class Ray {
     public Point p0;
@@ -13,6 +13,7 @@ public class Ray {
 
     /**
      * Get the start point of the ray
+     *
      * @return P0 - the start point of ray
      */
     public Point getP0() {
@@ -21,6 +22,7 @@ public class Ray {
 
     /**
      * Get the direction of the ray
+     *
      * @return The direction's vector
      */
     public Vector getDir() {
@@ -28,7 +30,7 @@ public class Ray {
     }
 
     public Point getPoint(double t) throws IllegalArgumentException {
-        return p0.add(dir.scale(t));
+            return p0.add(dir.scale(t));
     }
 
     @Override
