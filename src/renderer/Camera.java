@@ -4,7 +4,7 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
-import static primitives.Util.isZero;
+import static primitives.Util.*;
 
 public class Camera {
     //-----------------------------------------------------------
@@ -169,7 +169,20 @@ public class Camera {
      * @return null
      */
     public Ray constructRay(int Nx, int Ny, int j, int i) {
-        return null;
+        //View Plane 3x3 (WxH 6x6) - Central, Corner, Side pixels
+        //View Plane 4x4 (WxH 8x8) - Inside, Corner, Side pixels
+        double Rx = (double)width / Nx;
+        double Ry = (double)height / Ny;
+        Point center_p = p0.add(v_to.scale(distance)); // center point
+        double rightScale = alignZero(j - (Nx / 2)) * Rx + Rx / 2;
+        double upScale = alignZero(i - (Ny / 2)) * Ry + Ry / 2;
+        if (!isZero(rightScale)) {
+            center_p.add(v_right.scale(rightScale));
+        }
+        if (!isZero(upScale)) {
+            center_p.add(v_up.scale(-1 * upScale));
+        }
+        return new Ray(p0, center_p.subtract(p0));
     }
 
 }
