@@ -4,15 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="1-2-3 after check!">
-      <change afterPath="$PROJECT_DIR$/src/lighting/AmbientLight.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/primitives/RayTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/ImageWriterTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/RenderTests.java" afterDir="false" />
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="4-start function construct ray">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +72,38 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CameraIntegrationsTest.testIntersectionsRaySphere">
+  <component name="RunManager" selected="JUnit.CameraIntegrationsTest">
+    <configuration name="CameraIntegrationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraIntegrationsTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CameraIntegrationsTest.testIntersectionsRayPlane" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraIntegrationsTest" />
+      <option name="METHOD_NAME" value="testIntersectionsRayPlane" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CameraIntegrationsTest.testIntersectionsRaySphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
@@ -91,77 +120,44 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaneTest.testFindIntersaction" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CameraIntegrationsTest.testIntersectionsRayTriangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unittest.geometries.*" />
+          <option name="PATTERN" value="unittest.renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unittest.geometries" />
-      <option name="MAIN_CLASS_NAME" value="unittest.geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testFindIntersaction" />
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraIntegrationsTest" />
+      <option name="METHOD_NAME" value="testIntersectionsRayTriangle" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PlaneTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="unittest.geometries.*" />
+          <option name="PATTERN" value="unittest.renderer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="unittest.geometries" />
-      <option name="MAIN_CLASS_NAME" value="unittest.geometries.PlaneTest" />
-      <option name="METHOD_NAME" value="testGetNormal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SphereTest.testFindIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.geometries" />
-      <option name="MAIN_CLASS_NAME" value="unittest.geometries.SphereTest" />
-      <option name="METHOD_NAME" value="testFindIntersections" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="TubeTest.testGetNormal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.geometries.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.geometries" />
-      <option name="MAIN_CLASS_NAME" value="unittest.geometries.TubeTest" />
-      <option name="METHOD_NAME" value="testGetNormal" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CameraIntegrationsTest" />
         <item itemvalue="JUnit.CameraIntegrationsTest.testIntersectionsRaySphere" />
-        <item itemvalue="JUnit.SphereTest.testFindIntersections" />
-        <item itemvalue="JUnit.PlaneTest.testFindIntersaction" />
-        <item itemvalue="JUnit.TubeTest.testGetNormal" />
-        <item itemvalue="JUnit.PlaneTest.testGetNormal" />
+        <item itemvalue="JUnit.CameraTest" />
+        <item itemvalue="JUnit.CameraIntegrationsTest.testIntersectionsRayTriangle" />
+        <item itemvalue="JUnit.CameraIntegrationsTest.testIntersectionsRayPlane" />
       </list>
     </recent_temporary>
   </component>
@@ -191,7 +187,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1685881273411</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL‎-00003" summary="4-start test find intersection Ray sphere">
+      <created>1685943512288</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL‎-00003" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1685943512290</updated>
+    </task>
+    <task id="LOCAL‎-00004" summary="4-start function construct ray">
+      <created>1685952093005</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1685952093005</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -211,7 +221,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish 2 exercise" />
     <MESSAGE value="integration" />
-    <option name="LAST_COMMIT_MESSAGE" value="integration" />
+    <MESSAGE value="4-start test find intersection Ray sphere" />
+    <MESSAGE value="4-start function construct ray" />
+    <option name="LAST_COMMIT_MESSAGE" value="4-start function construct ray" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -221,11 +233,10 @@
           <line>49</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/unittest/geometries/SphereTest.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalArgumentException" package="java.lang" />
+          <option name="timeStamp" value="12" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>

@@ -1,7 +1,6 @@
 package primitives;
 
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Ray {
     public Point p0;
@@ -31,30 +30,7 @@ public class Ray {
     }
 
     public Point getPoint(double t) throws IllegalArgumentException {
-        return p0.add(dir.scale(t));
-    }
-
-    /**
-     * Return the closest point for beginning of the ray from all intersection points
-     *
-     * @param points list of intersections
-     * @return {@link Point}
-     */
-    public Point findClosestPoint(List<Point> points) {
-        Point closet = null;
-
-        if (!points.isEmpty()) {
-            closet = points.get(0);
-
-            for (int i = 1; i < points.size(); i++) {
-                if (points.get(i).distance(this.p0) < closet.distance(this.p0)) {
-                    closet = points.get(i);
-                }
-            }
-
-        }
-        return closet;
-
+            return p0.add(dir.scale(t));
     }
 
     @Override

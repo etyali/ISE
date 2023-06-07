@@ -171,17 +171,20 @@ public class Camera {
     public Ray constructRay(int Nx, int Ny, int j, int i) {
         //View Plane 3x3 (WxH 6x6) - Central, Corner, Side pixels
         //View Plane 4x4 (WxH 8x8) - Inside, Corner, Side pixels
-        double Rx = (double)width / Nx;
         double Ry = (double)height / Ny;
+        double Rx = (double)width / Nx;
         Point center_p = p0.add(v_to.scale(distance)); // center point
-        double rightScale = alignZero(j - (Nx / 2)) * Rx + Rx / 2;
-        double upScale = alignZero(i - (Ny / 2)) * Ry + Ry / 2;
+        double rightScale = alignZero((j - (Nx / 2d)) * Rx + Rx / 2d);
+        double upScale = -alignZero((i - (Ny / 2d)) * Ry + Ry / 2d);
         if (!isZero(rightScale)) {
-            center_p.add(v_right.scale(rightScale));
+            center_p = center_p.add(v_right.scale(rightScale));
         }
         if (!isZero(upScale)) {
-            center_p.add(v_up.scale(-1 * upScale));
+            center_p = center_p.add(v_up.scale(upScale));
         }
+        /*if (center_p.equals(p0)) {
+            return null;
+        }*/
         return new Ray(p0, center_p.subtract(p0));
     }
 
