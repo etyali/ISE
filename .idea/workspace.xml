@@ -4,10 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="4-start test find intersection Ray sphere">
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="1-2-3 after check!">
+      <change afterPath="$PROJECT_DIR$/src/lighting/AmbientLight.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/primitives/RayTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/ImageWriterTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/RenderTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -186,14 +191,7 @@
       <option name="project" value="LOCAL‎" />
       <updated>1685881273411</updated>
     </task>
-    <task id="LOCAL‎-00003" summary="4-start test find intersection Ray sphere">
-      <created>1685943512288</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL‎-00003" />
-      <option name="project" value="LOCAL‎" />
-      <updated>1685943512290</updated>
-    </task>
-    <option name="localTasksCounter" value="4" />
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -213,8 +211,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="finish 2 exercise" />
     <MESSAGE value="integration" />
-    <MESSAGE value="4-start test find intersection Ray sphere" />
-    <option name="LAST_COMMIT_MESSAGE" value="4-start test find intersection Ray sphere" />
+    <option name="LAST_COMMIT_MESSAGE" value="integration" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
