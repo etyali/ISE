@@ -22,10 +22,9 @@ class ImageWriterTest {
             for (int j = 0; j < imageWriter.getNy(); j++) {
                 //800/50 = 16 , 500/50 = 10
                 if (i % 50 == 0 || j % 50 == 0) {
-                    imageWriter.writePixel(i,j,redColor);
-                }
-                else {
-                    imageWriter.writePixel(i,j,yellowColor);
+                    imageWriter.writePixel(i, j, redColor);
+                } else {
+                    imageWriter.writePixel(i, j, yellowColor);
                 }
             }
         }

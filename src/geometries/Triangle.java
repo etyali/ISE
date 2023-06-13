@@ -20,6 +20,7 @@ public class Triangle extends Polygon {
         }
     }
 
+    /*
     @Override
     public List<Point> findIntersections(Ray ray) {
         List<Point> l = plane.findIntersections(ray);
@@ -38,6 +39,25 @@ public class Triangle extends Polygon {
         if ((dp1 > 0 && dp2 > 0 && dp3 > 0) || (dp1 < 0 && dp2 < 0 && dp3 < 0))
             return l;
         else return null;
-
+    }
+    */
+    @Override
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+        List<GeoPoint> l = plane.findGeoIntersectionsHelper(ray);
+        if (l == null) return null;
+        Point p0 = ray.getP0();
+        Vector v = ray.getDir();
+        Vector v1 = vertices.get(0).subtract(p0).normalize();
+        Vector v2 = vertices.get(1).subtract(p0).normalize();
+        Vector v3 = vertices.get(2).subtract(p0).normalize();
+        Vector n1 = v1.crossProduct(v2).normalize().normalize();
+        Vector n2 = v2.crossProduct(v3).normalize().normalize();
+        Vector n3 = v3.crossProduct(v1).normalize().normalize();
+        Double dp1 = Util.alignZero(v.dotProduct(n1));
+        Double dp2 = Util.alignZero(v.dotProduct(n2));
+        Double dp3 = Util.alignZero(v.dotProduct(n3));
+        if ((dp1 > 0 && dp2 > 0 && dp3 > 0) || (dp1 < 0 && dp2 < 0 && dp3 < 0))
+            return List.of(new GeoPoint(this, l.get(0).point));
+        else return null;
     }
 }

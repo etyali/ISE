@@ -1,8 +1,8 @@
 package renderer;
 
-import primitives.Point;
-import primitives.Ray;
-import primitives.Vector;
+import primitives.*;
+
+import java.util.MissingResourceException;
 
 import static primitives.Util.*;
 
@@ -39,6 +39,9 @@ public class Camera {
      * The height of the view plane.
      */
     private double height;
+    private ImageWriter imageWriter;
+    private RayTracerBase rayTracer;
+
     //-----------------------------------------------------------
     //CONSTRUCTOR
 
@@ -160,6 +163,28 @@ public class Camera {
     }
 
     /**
+     * Set camera's image writer
+     *
+     * @param imageWriter image writer
+     * @return camera instance
+     */
+    public Camera setImageWriter(ImageWriter imageWriter) {
+        this.imageWriter = imageWriter;
+        return this;
+    }
+
+    /**
+     * Set camera's ray tracer base
+     *
+     * @param rayTracer ray tracer base
+     * @return camera instance
+     */
+    public Camera setRayTracer(RayTracerBase rayTracer) {
+        this.rayTracer = rayTracer;
+        return this;
+    }
+
+    /**
      * construct Ray - creat ray in the given resolution
      *
      * @param Nx number of columns
@@ -171,8 +196,8 @@ public class Camera {
     public Ray constructRay(int Nx, int Ny, int j, int i) {
         //View Plane 3x3 (WxH 6x6) - Central, Corner, Side pixels
         //View Plane 4x4 (WxH 8x8) - Inside, Corner, Side pixels
-        double Ry = (double)height / Ny;
-        double Rx = (double)width / Nx;
+        double Ry = (double) height / Ny;
+        double Rx = (double) width / Nx;
         Point center_p = p0.add(v_to.scale(distance)); // center point
         double rightScale = alignZero((j - (Nx / 2d)) * Rx + Rx / 2d);
         double upScale = -alignZero((i - (Ny / 2d)) * Ry + Ry / 2d);
@@ -188,4 +213,56 @@ public class Camera {
         return new Ray(p0, center_p.subtract(p0));
     }
 
+    /**
+     * render image - will return something in the future
+     */
+    public Camera renderImage() {
+        if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0
+                || rayTracer == null || imageWriter == null) {
+            throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
+        }
+
+        int Nx = imageWriter.getNx();
+        int Ny = imageWriter.getNy();
+        for (int i = 0; i < Nx; ++i) {
+            for (int j = 0; j < Ny; ++j) {
+                imageWriter.writePixel(j, i, castRay(j, i));
+            }
+        }
+        return this;
+    }
+
+    /**
+     * if there is an image writer - create grid according to interval
+     *
+     * @param interval size for grid
+     * @param color    color of grid
+     */
+    public void printGrid(int interval, Color color) {
+        if (imageWriter == null) {
+            throw new MissingResourceException("can not create a grid while image writer is null", "image writer", "");
+        }
+        for (int i = 0; i < imageWriter.getNx(); i++) {
+            for (int j = 0; j < imageWriter.getNy(); j++) {
+                if (i % interval == 0 || j % interval == 0) {
+                    imageWriter.writePixel(i, j, color);
+                }
+            }
+        }
+    }
+
+    /**
+     * calls imageWriter write to image
+     */
+    public void writeToImage() {
+        if (imageWriter == null) {
+            throw new MissingResourceException("an not write to image while image writer is null", "imageWriter", "");
+        }
+        imageWriter.writeToImage();
+    }
+
+    private Color castRay(int j, int i) {
+        Ray ray = constructRay(imageWriter.getNx(), imageWriter.getNy(), j, i);
+        return rayTracer.traceRay(ray);
+    }
 }
