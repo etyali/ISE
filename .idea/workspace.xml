@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="final targil 6  - need documentation">
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/ShadowTests.java" afterDir="false" />
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="targil7.1 - shadowing">
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/ReflectionRefractionTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/ourReflectionRefractionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/AmbientLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/AmbientLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/Light.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/ShadowTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/ShadowTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +60,11 @@
       <recent name="geometries" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ISE\ISE5783_7998_8728\src\renderer" />
       <recent name="C:\ISE\ISE5783_7998_8728\src\unittest\renderer" />
       <recent name="C:\ISE\ISE5783_7998_8728\src\unittest\lighting" />
       <recent name="C:\ISE\ISE\src\unittest\renderer" />
       <recent name="C:\ISE\ISE\src\renderer" />
-      <recent name="C:\ISE\ISE\src\primitives" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -86,7 +73,7 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ShadowTests">
+  <component name="RunManager" selected="JUnit.unittest.renderer in ISE5783_7998_8728">
     <configuration name="LightsTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
@@ -102,7 +89,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LightsTests.sphereDirectional" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReflectionRefractionTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
         <pattern>
@@ -111,67 +98,65 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.LightsTests" />
-      <option name="METHOD_NAME" value="sphereDirectional" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests.sphereSpot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.LightsTests" />
-      <option name="METHOD_NAME" value="sphereSpot" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="LightsTests.trianglesSpot" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.LightsTests" />
-      <option name="METHOD_NAME" value="trianglesSpot" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ShadowTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ShadowTests" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ReflectionRefractionTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReflectionRefractionTests.twoSpheres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ReflectionRefractionTests" />
+      <option name="METHOD_NAME" value="twoSpheres" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ourReflectionRefractionTest.triangleInSpheres" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ourReflectionRefractionTest" />
+      <option name="METHOD_NAME" value="triangleInSpheres" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="unittest.renderer in ISE5783_7998_8728" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ShadowTests" />
+        <item itemvalue="JUnit.unittest.renderer in ISE5783_7998_8728" />
         <item itemvalue="JUnit.LightsTests" />
-        <item itemvalue="JUnit.LightsTests.trianglesSpot" />
-        <item itemvalue="JUnit.LightsTests.sphereSpot" />
-        <item itemvalue="JUnit.LightsTests.sphereDirectional" />
+        <item itemvalue="JUnit.ourReflectionRefractionTest.triangleInSpheres" />
+        <item itemvalue="JUnit.ReflectionRefractionTests" />
+        <item itemvalue="JUnit.ReflectionRefractionTests.twoSpheres" />
       </list>
     </recent_temporary>
   </component>
@@ -229,7 +214,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1686694984661</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎-00007" summary="targil7.1 - shadowing">
+      <created>1687081549668</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687081549668</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +246,8 @@
     <MESSAGE value="final targil 4" />
     <MESSAGE value="final targil 6  - need documantation" />
     <MESSAGE value="final targil 6  - need documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="final targil 6  - need documentation" />
+    <MESSAGE value="targil7.1 - shadowing" />
+    <option name="LAST_COMMIT_MESSAGE" value="targil7.1 - shadowing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

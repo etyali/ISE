@@ -14,6 +14,8 @@ public class Ray {
      */
     public Vector dir;
 
+    private static final double DELTA = 0.1;
+
     /**
      * Ray constructor - initialize point p0 and vector direction dir
      *
@@ -22,6 +24,13 @@ public class Ray {
      */
     public Ray(Point p0, Vector dir) {
         this.p0 = p0;
+        this.dir = dir.normalize();
+    }
+
+    public Ray(Point p0, Vector dir, Vector normal) {
+        Vector delta = normal.scale(Util.alignZero(normal.dotProduct(dir.normalize())) > 0 ? DELTA : -DELTA);
+        Point point = p0.add(delta.normalize());
+        this.p0 = point;
         this.dir = dir.normalize();
     }
 
@@ -70,7 +79,7 @@ public class Ray {
     /**
      * return the closest point to the ray's point (p0) from list of points
      *
-     * @param pointList list of points
+     * @param points list of points
      * @return The closest point
      */
     public Point findClosestPoint(List<Point> points) {

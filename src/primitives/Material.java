@@ -9,6 +9,10 @@ public class Material {
      * material's shininess
      */
     public int nShininess = 0;
+    /**
+     * transparency and reflection attenuation
+     */
+    public Double3 kT = Double3.ZERO, kR = Double3.ZERO;
 
     /**
      * setters
@@ -35,6 +39,26 @@ public class Material {
 
     public Material setnShininess(int nShininess) {
         this.nShininess = nShininess;
+        return this;
+    }
+
+    public Material setkT(Double3 kT) {
+        this.kT = kT;
+        return this;
+    }
+
+    public Material setkT(double kt) {
+        this.kT = new Double3(kt);
+        return this;
+    }
+
+    public Material setkR(Double3 kR) {
+        this.kR = kR;
+        return this;
+    }
+
+    public Material setkR(double kr) {
+        this.kR = new Double3(kr);
         return this;
     }
 }
