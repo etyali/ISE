@@ -5,9 +5,21 @@ import geometries.Intersectable.GeoPoint;
 import java.util.*;
 
 public class Ray {
+    /**
+     * ray's point
+     */
     public Point p0;
+    /**
+     * ray's direction vector
+     */
     public Vector dir;
 
+    /**
+     * Ray constructor - initialize point p0 and vector direction dir
+     *
+     * @param p0  ray point
+     * @param dir direction vector
+     */
     public Ray(Point p0, Vector dir) {
         this.p0 = p0;
         this.dir = dir.normalize();
@@ -31,6 +43,11 @@ public class Ray {
         return dir;
     }
 
+    /**
+     * Get the point of the ray
+     *
+     * @return The ray's point
+     */
     public Point getPoint(double t) throws IllegalArgumentException {
         return p0.add(dir.scale(t));
     }

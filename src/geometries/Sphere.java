@@ -11,7 +11,9 @@ import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
 public class Sphere extends RadialGeometry {
-
+    /**
+     * sphere's center point
+     */
     public Point center;
 
     /**
@@ -34,7 +36,7 @@ public class Sphere extends RadialGeometry {
     public Vector getNormal(Point p) throws IllegalArgumentException {
         return p.subtract(center).normalize();
     }
-    /*
+
     @Override
     public List<Point> findIntersections(Ray ray) {
         Point p0 = ray.getP0();
@@ -74,10 +76,10 @@ public class Sphere extends RadialGeometry {
             return List.of(ray.getPoint(t1));
         }
         return null;
-    }*/
+    }
 
     @Override
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         Point p0 = ray.getP0();
         Vector dir = ray.getDir().normalize();
         //Ray starts at the center of sphere
@@ -100,21 +102,20 @@ public class Sphere extends RadialGeometry {
         double t2 = alignZero(t_m + t_h);
 
         List<GeoPoint> intersectRaySphere;
-        if (t1 > 0 && t2 > 0) {
+        if (t1 > 0 && t2 > 0 && alignZero(t1 - maxDistance) <= 0 && alignZero(t2 - maxDistance) <= 0) {
             intersectRaySphere = List.of(new GeoPoint(this, ray.getPoint(t1)),
                     new GeoPoint(this, ray.getPoint(t2)));
             return intersectRaySphere;
         }
 
-        if (t1 <= 0) {
-            if (t2 <= 0) {
-                return null;
-            }
-            return List.of(new GeoPoint(this, ray.getPoint(t2)));
-        }
-        if (t2 <= 0) {
-            return List.of(new GeoPoint(this, ray.getPoint(t1)));
-        }
+        if (t1 > 0 && alignZero(t1 - maxDistance) <= 0) {
+            if (t2 > 0 && alignZero(t2 - maxDistance) <= 0)
+                return List.of(new GeoPoint(this, ray.getP0().add(ray.getDir().scale(t1))),
+                        new GeoPoint(this, ray.getP0().add(ray.getDir().scale(t2))));
+            return List.of(new GeoPoint(this, ray.getP0().add(ray.getDir().scale(t1))));
+
+        } else if (t2 > 0 && alignZero(t2 - maxDistance) <= 0)
+            return List.of(new GeoPoint(this, ray.getP0().add(ray.getDir().scale(t2))));
         return null;
     }
 }

@@ -9,8 +9,14 @@ import java.util.List;
 import java.util.Collections;
 
 public class Geometries extends Intersectable {
+    /**
+     * list of geometries in scene
+     */
     List<Intersectable> geometriesList;
 
+    /**
+     * default constructor - initialize geometries list with empty list
+     */
     public Geometries() {
         this.geometriesList = new LinkedList<>();
     }
@@ -20,18 +26,37 @@ public class Geometries extends Intersectable {
 
     //    this.geometriesList = geometries;
     //}
+
+    /**
+     * constructor - initialize geometries list
+     *
+     * @param geometriesList new geometries list
+     */
     public Geometries(List<Intersectable> geometriesList) {
         this.geometriesList = geometriesList;
     }
 
+    /**
+     * add list of geometries to geometries list
+     *
+     * @param geometries new geometries
+     */
     public void add(Intersectable... geometries) {
         Collections.addAll(geometriesList, geometries);
     }
 
 
-    /*public List<Point> findIntersections(Ray ray) {
-        return null;
-    }*/
+    public List<Point> findIntersections(Ray ray) {
+        if (geometriesList == null) return null;
+        List<Point> allIntersections = new LinkedList<>();
+        List<Point> temp;
+        for (Intersectable i : geometriesList) {
+            temp = i.findIntersections(ray);
+            if (temp != null) allIntersections.addAll(temp);
+        }
+        if (allIntersections.isEmpty()) return null;
+        return allIntersections;
+    }
 
     /**
      * find all intersections of ray and geometries in the list
@@ -40,12 +65,12 @@ public class Geometries extends Intersectable {
      * @return list of all geo intersections
      */
     @Override
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         if (geometriesList == null) return null;
         List<GeoPoint> allIntersections = new LinkedList<>();
         List<GeoPoint> temp;
         for (Intersectable i : geometriesList) {
-            temp = i.findGeoIntersections(ray);
+            temp = i.findGeoIntersections(ray, maxDistance);
             if (temp != null) allIntersections.addAll(temp);
         }
         if (allIntersections.isEmpty()) return null;

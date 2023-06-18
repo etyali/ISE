@@ -12,6 +12,8 @@ abstract class Light {
     final private Color intensity;
 
     /**
+     * light constructor - initialize intensity
+     *
      * @param intens new Light intensity
      */
     protected Light(Color intens) {

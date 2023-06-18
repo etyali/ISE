@@ -5,8 +5,13 @@ import primitives.Point;
 import primitives.Vector;
 
 public class SpotLight extends PointLight {
+    /**
+     * spotlight direction vector
+     */
     private Vector direction;
-
+    /**
+     * spotlight narrow beam
+     */
     int narrowBeam = 1;
 
     /**
@@ -22,8 +27,10 @@ public class SpotLight extends PointLight {
     }
 
     /**
-     * @param narrowBeam
-     * @return
+     * initialize narrow beam
+     *
+     * @param narrowBeam new narrow beam
+     * @return spotlight
      */
     public SpotLight setNarrowBeam(int narrowBeam) {
         this.narrowBeam = narrowBeam;
@@ -34,11 +41,12 @@ public class SpotLight extends PointLight {
      * calculate light intensity
      *
      * @param p point on geometry
-     * @return
+     * @return intensity
      */
     public Color getIntensity(Point p) {
         //if (direction == null) return Color.BLACK;
         return super.getIntensity(p).scale(Math.max(0d, direction.dotProduct(super.getL(p))));
     }
+
 
 }

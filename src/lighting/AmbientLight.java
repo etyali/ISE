@@ -3,6 +3,9 @@ package lighting;
 import primitives.*;
 
 public class AmbientLight extends Light {
+    /**
+     * NONE ambient light - initial to zero
+     */
     public static final AmbientLight NONE = new AmbientLight(Color.BLACK, Double3.ZERO);
 
     /**
@@ -22,6 +25,12 @@ public class AmbientLight extends Light {
         super(Ia.scale(Ka));
     }
 
+    /**
+     * ambient light constructor
+     *
+     * @param Ia color
+     * @param Ka convert to double3
+     */
     public AmbientLight(Color Ia, double Ka) {
         super(Ia.scale(new Double3(Ka)));
     }

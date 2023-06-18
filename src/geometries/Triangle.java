@@ -20,7 +20,7 @@ public class Triangle extends Polygon {
         }
     }
 
-    /*
+
     @Override
     public List<Point> findIntersections(Ray ray) {
         List<Point> l = plane.findIntersections(ray);
@@ -40,10 +40,10 @@ public class Triangle extends Polygon {
             return l;
         else return null;
     }
-    */
+
     @Override
-    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
-        List<GeoPoint> l = plane.findGeoIntersectionsHelper(ray);
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
+        List<GeoPoint> l = plane.findGeoIntersectionsHelper(ray, maxDistance);
         if (l == null) return null;
         Point p0 = ray.getP0();
         Vector v = ray.getDir();

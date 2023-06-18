@@ -10,7 +10,13 @@ import java.util.List;
 import static primitives.Util.*;
 
 public class Plane extends Geometry {
+    /**
+     * point on plane
+     */
     public Point p0;
+    /**
+     * normal to plane
+     */
     public Vector normal;
 
     /**
@@ -48,10 +54,16 @@ public class Plane extends Geometry {
         return normal;
     }
 
+    /**
+     * getNormal
+     *
+     * @return normal
+     */
     public Vector getNormal() {
         return normal;
     }
-    /*
+
+
     @Override
     public List<Point> findIntersections(Ray ray) throws IllegalArgumentException {
         Point ray_point = ray.p0;
@@ -75,9 +87,9 @@ public class Plane extends Geometry {
         List<Point> intersections = List.of(ray.getPoint(t));
         return intersections;
     }
-    */
+
     @Override
-    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         Point ray_point = ray.getP0();
         Vector ray_vector = ray.getDir();
         double t;
@@ -92,7 +104,7 @@ public class Plane extends Geometry {
         } else {
             t = alignZero((normal.dotProduct(p0.subtract(ray_point))) / nv);
         }
-        if (t <= 0)  // ray start in/after plane
+        if (t <= 0 || isZero(t) || alignZero(t - maxDistance) > 0)  // ray start in/after plane
         {
             return null;
         }

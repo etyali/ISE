@@ -8,7 +8,13 @@ import primitives.Color;
 import java.awt.*;
 
 public abstract class Geometry extends Intersectable {
+    /**
+     * emission - emission of geometry (initialize to black)
+     */
     protected Color emission = Color.BLACK;
+    /**
+     * material - material of geometry
+     */
     private Material material = new Material();
 
     /**
@@ -41,6 +47,8 @@ public abstract class Geometry extends Intersectable {
     }
 
     /**
+     * set new material
+     *
      * @param material new Geometry material
      * @return Geometry
      */
