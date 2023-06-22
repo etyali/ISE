@@ -19,7 +19,7 @@ class PointTest {
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: Correct addition between point and vector
-        assertEquals (p1.add(new Vector(-1, -2, -3)),
+        assertEquals(p1.add(new Vector(-1, -2, -3)),
                 new Point(0, 0, 0),
                 "ERROR - Point add Vector");
     }
@@ -45,7 +45,7 @@ class PointTest {
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: a regular distance squared
-        assertEquals(p1.distanceSquared(new Point(3, 0,0)), 17,
+        assertEquals(17, p1.distanceSquared(new Point(3, 0, 0)),
                 "wrong calculation of distanceSquared() in Point");
 
         // TC02: Same points
@@ -61,7 +61,7 @@ class PointTest {
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: a regular distance
-        assertEquals(p1.distance(new Point(3, 0,0)), Math.sqrt(17),
+        assertEquals(5, p1.distance(new Point(4, -2, 3)),
                 "wrong calculation of distance() in Point");
 
         // TC02: Co-located points

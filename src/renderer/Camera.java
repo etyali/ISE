@@ -2,7 +2,10 @@ package renderer;
 
 import primitives.*;
 
+import java.util.LinkedList;
+import java.util.List;
 import java.util.MissingResourceException;
+import java.util.Random;
 
 import static primitives.Util.*;
 
@@ -41,6 +44,14 @@ public class Camera {
     private double height;
     private ImageWriter imageWriter;
     private RayTracerBase rayTracer;
+    /**
+     * number of rays in a beam
+     */
+    private int numberOfBeam = 90;
+    /**
+     * level for adaptive super sampling (AA)
+     */
+    private int maxLevelAdaptiveSuperSampling = 3;
 
     //-----------------------------------------------------------
     //CONSTRUCTOR
@@ -185,7 +196,40 @@ public class Camera {
     }
 
     /**
-     * construct Ray - creat ray in the given resolution
+     * set maximum level to sample
+     *
+     * @param maxLevelAdaptiveSuperSampling max level
+     * @return camera instance
+     */
+    public Camera setMaxLevelAdaptiveSuperSampling(int maxLevelAdaptiveSuperSampling) {
+        this.maxLevelAdaptiveSuperSampling = maxLevelAdaptiveSuperSampling;
+        return this;
+    }
+
+    /**
+     * turn on anti aliasing improvement
+     *
+     * @param level level of rays constructing for anti aliasing
+     * @return camera instance
+     */
+    public Camera antiAliasingOn(int level) {
+        if (level < 0) throw new IllegalArgumentException("level can not be negative");
+        this.maxLevelAdaptiveSuperSampling = level;
+        return this;
+    }
+
+    /**
+     * turn off anti aliasing improvement
+     *
+     * @return camera instance
+     */
+    public Camera antiAliasingOff() {
+        this.maxLevelAdaptiveSuperSampling = 0;
+        return this;
+    }
+
+    /**
+     * construct Ray - create ray in the given resolution
      *
      * @param Nx number of columns
      * @param Ny number of rows
@@ -194,27 +238,58 @@ public class Camera {
      * @return null
      */
     public Ray constructRay(int Nx, int Ny, int j, int i) {
-        //View Plane 3x3 (WxH 6x6) - Central, Corner, Side pixels
-        //View Plane 4x4 (WxH 8x8) - Inside, Corner, Side pixels
         double Ry = (double) height / Ny;
         double Rx = (double) width / Nx;
         Point center_p = p0.add(v_to.scale(distance)); // center point
         double rightScale = alignZero((j - (Nx / 2d)) * Rx + Rx / 2d);
-        double upScale = -alignZero((i - (Ny / 2d)) * Ry + Ry / 2d);
+        double upScale = -1 * alignZero((i - (Ny / 2d)) * Ry + Ry / 2d);
         if (!isZero(rightScale)) {
             center_p = center_p.add(v_right.scale(rightScale));
         }
         if (!isZero(upScale)) {
             center_p = center_p.add(v_up.scale(upScale));
         }
-        /*if (center_p.equals(p0)) {
-            return null;
-        }*/
         return new Ray(p0, center_p.subtract(p0));
     }
 
     /**
-     * render image - will return something in the future
+     * for super sampling - with random method
+     * construct beam of ray throw random point in every pixel
+     *
+     * @param nX number of rows
+     * @param nY number of columns
+     * @param j  index of pixel (column)
+     * @param i  index of pixel (rows)
+     * @return beam with (number of beam) rays
+     */
+    public List<Ray> constructBeam(int j, int i, int nX, int nY) {
+        List<Ray> beam = new LinkedList<>();
+        beam.add(constructRay(nX, nY, j, i));
+        double rY = (double) height / nY;
+        double rX = (double) width / nX;
+        Point pixelCenter = p0.add(v_to.scale(distance)); // center point
+        double rightScale = alignZero((j - (nX / 2d)) * rX + rX / 2d);
+        double upScale = alignZero((i - (nY / 2d)) * rY + rY / 2d);
+        Random rand = new Random();
+        if (!isZero(rightScale)) {
+            pixelCenter = pixelCenter.add(v_right.scale(rightScale));
+        }
+        if (!isZero(upScale)) {
+            pixelCenter = pixelCenter.add(v_up.scale(-1 * upScale));
+        }
+        for (int k = 0; k < numberOfBeam; k++) {
+            double lX = rX * (rand.nextBoolean() ? rand.nextDouble() : -1 * rand.nextDouble());
+            double lY = rY * (rand.nextBoolean() ? rand.nextDouble() : -1 * rand.nextDouble());
+            Point randPoint = pixelCenter;
+            if (!isZero(lX)) randPoint = randPoint.add(v_right.scale(lX));
+            if (!isZero(lY)) randPoint = randPoint.add(v_up.scale(-1 * lY));
+            beam.add(new Ray(p0, randPoint.subtract(p0)));
+        }
+        return beam;
+    }
+
+    /**
+     * render image - return camera after produce image
      */
     public Camera renderImage() {
         if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0
@@ -222,11 +297,56 @@ public class Camera {
             throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
         }
 
-        int Nx = imageWriter.getNx();
-        int Ny = imageWriter.getNy();
-        for (int i = 0; i < Nx; ++i) {
-            for (int j = 0; j < Ny; ++j) {
-                imageWriter.writePixel(j, i, castRay(j, i));
+        int nX = imageWriter.getNx();
+        int nY = imageWriter.getNy();
+        for (int i = 0; i < nX; ++i) {
+            for (int j = 0; j < nY; ++j) {
+                Color color = castRay(j, i, nX, nY);
+                imageWriter.writePixel(j, i, color);
+            }
+        }
+        return this;
+    }
+
+    /**
+     * produce image with super sampling using random method
+     *
+     * @return camera
+     */
+    public Camera renderImageSuperSampling() {
+        // check exception
+        if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0
+                || rayTracer == null || imageWriter == null) {
+            throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
+        }
+        int nX = imageWriter.getNx();
+        int nY = imageWriter.getNy();
+        for (int i = 0; i < nX; i++) {
+            for (int j = 0; j < nY; j++) {
+                Color color = castBeam(j, i, nX, nY);
+                imageWriter.writePixel(j, i, color);
+            }
+        }
+        return this;
+    }
+
+    /**
+     * render image with adaptive super sampling method - calls castBeamASS for each pixel
+     *
+     * @return camera instance
+     */
+    public Camera renderImageAdaptiveSuperSampling() {
+        // check exception
+        if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0
+                || rayTracer == null || imageWriter == null) {
+            throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
+        }
+        int nX = imageWriter.getNx();
+        int nY = imageWriter.getNy();
+        for (int i = 0; i < nX; i++) {
+            for (int j = 0; j < nY; j++) {
+                Color color = castBeamASS(j, i, nX, nY);
+                imageWriter.writePixel(j, i, color);
             }
         }
         return this;
@@ -261,8 +381,82 @@ public class Camera {
         imageWriter.writeToImage();
     }
 
-    private Color castRay(int j, int i) {
-        Ray ray = constructRay(imageWriter.getNx(), imageWriter.getNy(), j, i);
-        return rayTracer.traceRay(ray);
+    /**
+     * gives ray's color
+     *
+     * @param j  pixel column
+     * @param i  pixel row
+     * @param nX number of rows
+     * @param nY number of columns
+     * @return color of ray throw pixel
+     */
+    private Color castRay(int j, int i, int nX, int nY) {
+        Ray ray = constructRay(nX, nY, j, i);
+        Color color = rayTracer.traceRay(ray);
+        return color;
+    }
+
+    /**
+     * calculate average color of all rays in beam (rays intersect with one pixel)
+     *
+     * @param j  pixel column
+     * @param i  pixel row
+     * @param nX number of rows
+     * @param nY number of columns
+     * @return pixel's color
+     */
+    private Color castBeam(int j, int i, int nX, int nY) {
+        List<Ray> beam = constructBeam(j, i, nX, nY);
+        Color color = Color.BLACK;
+        for (Ray ray : beam) // calculate average color
+        {
+            color = color.add(rayTracer.traceRay(ray));
+        }
+        return color.reduce(numberOfBeam);
+    }
+
+    /**
+     * cast beam with adaptive super sampling method - calls calcColorASS
+     *
+     * @param j  pixel index (column)
+     * @param i  pixel index (rows)
+     * @param nX number of roes
+     * @param nY number of columns
+     * @return pixel color
+     */
+    private Color castBeamASS(int j, int i, int nX, int nY) {
+        Ray center = constructRay(nX, nY, j, i); // ray throw pixel center
+        Color centerColor = rayTracer.traceRay(center); // color of pixel center
+        return calcColorASS(j, i, nX, nY, maxLevelAdaptiveSuperSampling, centerColor);
+    }
+
+    /**
+     * calculate recursively pixel color - divide to 4 mini pixels, calculate colors, divide..
+     *
+     * @param j           pixel index (column)
+     * @param i           pixel index (rows)
+     * @param nX          number of rows
+     * @param nY          number of columns
+     * @param level       of recursive
+     * @param centerColor center pixel color
+     * @return average of points from pixel
+     */
+    private Color calcColorASS(int j, int i, int nX, int nY, int level, Color centerColor) {
+        if (level == 0) return centerColor;
+        Color color = centerColor;
+        // divide pixel to 4
+        Ray[] beam = new Ray[]{constructRay(nX * 2, nY * 2, j * 2, i * 2),
+                constructRay(nX * 2, nY * 2, j * 2, i * 2 + 1),
+                constructRay(nX * 2, nY * 2, j * 2 + 1, i * 2),
+                constructRay(nX * 2, nY * 2, j * 2 + 1, i * 2 + 1)};
+        for (int ray = 0; ray < 4; ray++) {
+            Color miniPixelColor = rayTracer.traceRay(beam[ray]);
+            if (!miniPixelColor.equals(centerColor)) {
+                miniPixelColor = calcColorASS(2 * j + ray / 2, 2 * i + ray % 2, 2 * nX, 2 * nY,
+                        level - 1, miniPixelColor);
+            }
+            color = color.add(miniPixelColor);
+        }
+        return color.reduce(5); // average of each quarter and center point colors
     }
 }

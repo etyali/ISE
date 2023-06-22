@@ -14,12 +14,10 @@ public abstract class Intersectable {
      * @param ray ray for intersections
      * @return null if there is no intersection, list of intersections point else
      */
-    /*public List<Point> findIntersections(Ray ray, double maxDistance) {
-        var geoList = findGeoIntersections(ray, maxDistance);
+    public List<Point> findIntersections(Ray ray) {
+        var geoList = findGeoIntersections(ray);
         return geoList == null ? null : geoList.stream().map(gp -> gp.point).toList();
-    }*/
-
-    public abstract List<Point> findIntersections(Ray ray);
+    }
 
     /**
      * to implement in all find geo intersections classes

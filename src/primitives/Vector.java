@@ -110,7 +110,8 @@ public class Vector extends Point {
     public Vector normalize() {
         try {
             double len = length();
-            return new Vector(xyz.d1 / len, xyz.d2 / len, xyz.d3 / len);
+            return new Vector(xyz.scale(1 / len));
+            //return new Vector(xyz.d1 / len, xyz.d2 / len, xyz.d3 / len);
         } catch (Exception e) {
             throw new IllegalArgumentException();
         }
@@ -118,6 +119,7 @@ public class Vector extends Point {
 
     /**
      * dotProduct
+     *
      * @param other vector for dot product
      * @return dot product between our vector and vector other (linear)
      */

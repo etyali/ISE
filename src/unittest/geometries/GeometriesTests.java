@@ -1,4 +1,4 @@
-package unittest;
+package unittest.geometries;
 
 public class GeometriesTests {
 }

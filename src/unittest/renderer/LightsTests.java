@@ -69,6 +69,24 @@ public class LightsTests {
     }
 
     /**
+     * produce a picture of a sphere lights by three different lights from three different directions
+     *
+     * @throws Exception
+     */
+    @Test
+    public void LightsTests() throws Exception {
+        scene1.geometries.add(sphere); //(50d, (0,0,-50))
+        scene1.lights.add(new DirectionalLight(sphereLightColor, new Vector(-5, -2, -0.5)));
+        scene1.lights.add(new SpotLight(sphereLightColor, new Point(-50, -100, 30), new Vector(1, 1, 0.5)));
+        scene1.lights.add(new PointLight(sphereLightColor, new Point(-50, 60, 10)));//new Point(-25, 0, 0)).setkL(0.001).setkQ(0.0002));
+        ImageWriter imageWriter = new ImageWriter("allLightSphere", 500, 500);
+        camera1.setImageWriter(imageWriter) //
+                .setRayTracer(new RayTracerBasic(scene1)) //
+                .renderImage(); //
+        camera1.writeToImage(); //
+    }
+
+    /**
      * Produce a picture of a sphere lighted by a directional light
      */
     @Test

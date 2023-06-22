@@ -65,30 +65,6 @@ public class Plane extends Geometry {
 
 
     @Override
-    public List<Point> findIntersections(Ray ray) throws IllegalArgumentException {
-        Point ray_point = ray.p0;
-        Vector ray_vector = ray.dir;
-        double t;
-        double nv = normal.dotProduct(ray_vector);  // n * v
-        if (ray_point.equals(p0)) {
-            return null;
-        }  // ray starts in plane's point
-        // ray parallel to plane
-        if (isZero(nv))  // ray orthogonal to plane
-        {
-            t = alignZero(normal.dotProduct(p0.subtract(ray_point)));
-        } else {
-            t = alignZero((normal.dotProduct(p0.subtract(ray_point))) / nv);
-        }
-        if (t <= 0)  // ray start in/after plane
-        {
-            return null;
-        }
-        List<Point> intersections = List.of(ray.getPoint(t));
-        return intersections;
-    }
-
-    @Override
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         Point ray_point = ray.getP0();
         Vector ray_vector = ray.getDir();

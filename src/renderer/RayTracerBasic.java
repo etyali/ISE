@@ -196,7 +196,7 @@ public class RayTracerBasic extends RayTracerBase {
      */
     private Ray constructReflectedRay(Vector n, Point point, Vector v) {
         if (Util.isZero(v.dotProduct(n))) return new Ray(point, v);
-        Vector r = v.subtract(n.scale(v.dotProduct(n)).scale(2));//𝒓 = 𝒗 − 𝟐 ∙ 𝒗 ∙ 𝒏 ∙ 𝒏
+        Vector r = v.subtract(n.scale(v.dotProduct(n)).scale(2)); //𝒓 = 𝒗 − 𝟐 ∙ 𝒗 ∙ 𝒏 ∙ 𝒏
         return new Ray(point, r, n);
     }
 

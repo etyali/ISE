@@ -103,8 +103,4 @@ public class Polygon extends Geometry {
         return null;
     }
 
-    public List<Point> findIntersections(Ray ray) {
-        return null;
-    }
-
 }

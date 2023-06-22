@@ -15,15 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SphereTest {
 
-    Sphere sphere = new Sphere(1d, new Point (1, 0, 0));
+    Sphere sphere = new Sphere(1d, new Point(1, 0, 0));
 
     @Test
     void testGetNormal() throws Exception {
         // ============ Equivalence Partitions Tests ==============
 
         // TC01: A simple single test here (all the points are the same)
-        assertEquals(new Vector(0, 0, 1), sphere.getNormal(new Point(0, 0, 2)), "Incorrect normal to sphere");
-
+        assertEquals(new Vector(0, 0, 1), sphere.getNormal(new Point(1, 0, 2)), "Incorrect normal to sphere");
     }
 
     @Test
@@ -72,7 +71,7 @@ class SphereTest {
 
         // **** Group: Ray's line goes through the center
         // TC13: Ray starts before the sphere (2 points)
-        assertEquals(List.of(new Point(0, 0, 0), new Point(2, 0, 0)),
+        assertEquals(List.of( new Point(2, 0, 0), new Point(0, 0, 0)),
                 sphere.findIntersections(new Ray(new Point(-1, 0, 0), new Vector(1, 0, 0))),
                 "Ray starts before the sphere and need to be 2 intersections");
 
@@ -102,7 +101,7 @@ class SphereTest {
 
         // **** Group: Ray's line is tangent to the sphere (all tests 0 points)
         // TC19: Ray starts before the tangent point
-        assertNull(sphere.findIntersections(new Ray(new Point(2, -1, -1), new Vector(0, 1, 1))),
+        assertNull(sphere.findIntersections(new Ray(new Point(0,0,1), new Vector(1,0,0))),
                 "Ray starts before the tangent point");
 
         // TC20: Ray starts at the tangent point
