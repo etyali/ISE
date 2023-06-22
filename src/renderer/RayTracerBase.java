@@ -4,8 +4,15 @@ import primitives.*;
 import geometries.*;
 import scene.Scene;
 
-
+/**
+ * Ray Tracer Base abstract class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public abstract class RayTracerBase {
+    /**
+     * scene object
+     */
     protected Scene scene;
 
     /**

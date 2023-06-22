@@ -4,6 +4,11 @@ import primitives.Color;
 import primitives.Point;
 import primitives.Vector;
 
+/**
+ * SpotLight class - extends point light
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class SpotLight extends PointLight {
     /**
      * spotlight direction vector
@@ -30,7 +35,7 @@ public class SpotLight extends PointLight {
      * initialize narrow beam
      *
      * @param narrowBeam new narrow beam
-     * @return spotlight
+     * @return spotlight instance
      */
     public SpotLight setNarrowBeam(int narrowBeam) {
         this.narrowBeam = narrowBeam;

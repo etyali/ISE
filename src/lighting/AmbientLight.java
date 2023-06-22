@@ -2,6 +2,11 @@ package lighting;
 
 import primitives.*;
 
+/**
+ * Ambient Light class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class AmbientLight extends Light {
     /**
      * NONE ambient light - initial to zero

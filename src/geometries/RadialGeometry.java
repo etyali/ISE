@@ -1,5 +1,10 @@
 package geometries;
 
+/**
+ * abstruct class for all radial geometries
+ *
+ * @author Etya Lichtman and Orly salem
+ */
 public abstract class RadialGeometry extends Geometry {
     /**
      * radial geometry's radius

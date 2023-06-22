@@ -5,9 +5,12 @@ import primitives.*;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * intersections and Geo point class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public abstract class Intersectable {
-    //public abstract List<Point> findIntersections(Ray ray);
-
     /**
      * return all intersections between ray and geometries list
      *
@@ -39,6 +42,13 @@ public abstract class Intersectable {
         return findGeoIntersectionsHelper(ray, maxDistance);
     }
 
+    /**
+     * to implement in other classes
+     *
+     * @param ray         intersection ray
+     * @param maxDistance maximum distance to compute
+     * @return intersections list
+     */
     protected abstract List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance);
 
     /**

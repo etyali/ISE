@@ -1,5 +1,10 @@
 package primitives;
 
+/**
+ * Material of geometry class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Material {
     /**
      * diffusive and specular
@@ -14,9 +19,8 @@ public class Material {
      */
     public Double3 kT = Double3.ZERO, kR = Double3.ZERO;
 
-    /**
-     * setters
-     */
+    //----------------------------SETTERS-------------------------------
+
     public Material setkD(Double3 kD) {
         this.kD = kD;
         return this;

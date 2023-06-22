@@ -4,6 +4,11 @@ import geometries.Intersectable.GeoPoint;
 
 import java.util.*;
 
+/**
+ * Ray class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Ray {
     /**
      * ray's point
@@ -27,6 +32,13 @@ public class Ray {
         this.dir = dir.normalize();
     }
 
+    /**
+     * ray constructor
+     *
+     * @param p0     new ray point that closer to reflection surface
+     * @param dir    ray direction vector
+     * @param normal to geometry
+     */
     public Ray(Point p0, Vector dir, Vector normal) {
         Vector delta = normal.scale(Util.alignZero(normal.dotProduct(dir.normalize())) > 0 ? DELTA : -DELTA);
         Point point = p0.add(delta.normalize());
@@ -46,7 +58,7 @@ public class Ray {
     /**
      * Get the direction of the ray
      *
-     * @return The direction's vector
+     * @return direction's vector
      */
     public Vector getDir() {
         return dir;
@@ -55,7 +67,7 @@ public class Ray {
     /**
      * Get the point of the ray
      *
-     * @return The ray's point
+     * @return ray's point
      */
     public Point getPoint(double t) throws IllegalArgumentException {
         return p0.add(dir.scale(t));
@@ -86,21 +98,6 @@ public class Ray {
         return points == null || points.isEmpty() ? null
                 : findClosestGeoPoint(points.stream().map(p -> new GeoPoint(null, p)).toList()).point;
     }
-    /*public Point findClosestPoint(List<Point> pointList) {
-        if (pointList == null || pointList.isEmpty()) {
-            return null;
-        }
-        Point cPoint = pointList.get(0);
-        double minDS = p0.distanceSquared(cPoint);
-        for (Point p : pointList) {
-            double dis = p0.distanceSquared(p);
-            if (dis < minDS) {
-                minDS = dis;
-                cPoint = p;
-            }
-        }
-        return cPoint;
-    }*/
 
     /**
      * return the closest point to the ray's point (p0) and the geometry the point is on from list of GeoPoints

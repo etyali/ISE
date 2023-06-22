@@ -9,6 +9,11 @@ import java.util.Random;
 
 import static primitives.Util.*;
 
+/**
+ * Camera class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Camera {
     //-----------------------------------------------------------
     //FIELDS
@@ -289,7 +294,9 @@ public class Camera {
     }
 
     /**
-     * render image - return camera after produce image
+     * render image
+     *
+     * @return camera after produce image
      */
     public Camera renderImage() {
         if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0

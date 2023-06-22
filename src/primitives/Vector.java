@@ -1,5 +1,10 @@
 package primitives;
 
+/**
+ * Vector class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Vector extends Point {
     /**
      * Constructor to initialize point based object the same number values
@@ -45,7 +50,7 @@ public class Vector extends Point {
      * add two vectors
      *
      * @param v vector to add
-     * @return new vector-our vector+v
+     * @return new vector - our vector + v
      */
     public Vector add(Vector v) throws IllegalArgumentException {
         try {
@@ -59,7 +64,7 @@ public class Vector extends Point {
      * scale- multiplication of scalar and vector
      *
      * @param d scalar for multiplication
-     * @return new vector-our vector with scalar multiplication
+     * @return new vector - our vector with scalar multiplication
      */
     public Vector scale(double d) throws IllegalArgumentException {
         try {

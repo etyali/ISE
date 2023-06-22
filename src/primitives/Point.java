@@ -3,7 +3,15 @@ package primitives;
 import java.util.Objects;
 import java.math.*;
 
+/**
+ * Point class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Point {
+    /**
+     * point coordinate
+     */
     final public Double3 xyz;
 
     /**
@@ -76,8 +84,8 @@ public class Point {
      * calculate the distance between two points
      *
      * @param p the other point to calculate distance
-     *          *          this: the first point to calculate distance
-     *          * @return the distance between two points
+     *          this: the first point to calculate distance
+     * @return the distance between two points
      */
     public double distance(Point p) {
         return Math.sqrt(distanceSquared(p));

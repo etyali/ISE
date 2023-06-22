@@ -10,6 +10,11 @@ import java.util.List;
 import static primitives.Util.alignZero;
 import static primitives.Util.isZero;
 
+/**
+ * Sphere class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Sphere extends RadialGeometry {
     /**
      * sphere's center point
@@ -28,16 +33,22 @@ public class Sphere extends RadialGeometry {
     }
 
     /**
-     * getNormal
+     * get Normal
      *
      * @param p- to compute normal
-     * @return null for now
+     * @return normal to point
      */
     public Vector getNormal(Point p) throws IllegalArgumentException {
         return p.subtract(center).normalize();
     }
 
-
+    /**
+     * find all intersections between sphere and given ray
+     *
+     * @param ray         intersection ray
+     * @param maxDistance maximum distance to compute
+     * @return list of all geo point (sphere, intersection)
+     */
     @Override
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         Point p0 = ray.getP0();
@@ -53,7 +64,7 @@ public class Sphere extends RadialGeometry {
 
         double t_m = u.dotProduct(dir);
         double d = Math.sqrt(u.lengthSquared() - (t_m * t_m));
-        //ray does not intersect the sphere
+        //ray does not intersect sphere
         if (d >= radius) {
             return null;
         }

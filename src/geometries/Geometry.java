@@ -7,6 +7,11 @@ import primitives.Color;
 
 import java.awt.*;
 
+/**
+ * class for individual geometry - extend Intersectable
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public abstract class Geometry extends Intersectable {
     /**
      * emission - emission of geometry (initialize to black)
@@ -16,6 +21,8 @@ public abstract class Geometry extends Intersectable {
      * material - material of geometry
      */
     private Material material = new Material();
+
+    //----------------------------GETTERS-------------------------------
 
     /**
      * to do in implements classes
@@ -35,6 +42,8 @@ public abstract class Geometry extends Intersectable {
     public Material getMaterial() {
         return material;
     }
+
+    //----------------------------SETTERS-------------------------------
 
     /**
      * set new color for emission

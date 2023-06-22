@@ -6,6 +6,11 @@ import primitives.Vector;
 
 import java.util.List;
 
+/**
+ * Tube class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Tube extends RadialGeometry {
     /**
      * tube axis ray
@@ -44,11 +49,6 @@ public class Tube extends RadialGeometry {
 
         return p.subtract(orToP).normalize();
     }
-
-    /*@Override
-    public List<Point> findIntersections(Ray ray, double maxDistance) {
-        return null;
-    }*/
 
     @Override
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {

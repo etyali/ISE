@@ -5,7 +5,9 @@ import primitives.Point;
 import primitives.Vector;
 
 /**
+ * Light source interface
  *
+ * @author Etya Lichtman and Orly salem
  */
 public interface LightSource {
     /**
@@ -20,7 +22,7 @@ public interface LightSource {
      * To implement in inheritance classes
      *
      * @param p point
-     * @return light
+     * @return light vector
      */
     public Vector getL(Point p);
 

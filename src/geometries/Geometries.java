@@ -7,6 +7,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Collections;
 
+/**
+ * class of all geometries in a scene
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Geometries extends Intersectable {
     /**
      * list of geometries in scene

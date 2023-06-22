@@ -20,7 +20,13 @@ public class Triangle extends Polygon {
         }
     }
 
-
+    /**
+     * find all intersections between triangle and given ray
+     *
+     * @param ray         intersection ray
+     * @param maxDistance maximum distance to compute
+     * @return list of geo point (triangle, intersection)
+     */
     @Override
     public List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         List<GeoPoint> l = plane.findGeoIntersectionsHelper(ray, maxDistance);

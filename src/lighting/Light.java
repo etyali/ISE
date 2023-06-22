@@ -3,7 +3,9 @@ package lighting;
 import primitives.Color;
 
 /**
+ * Light class (abstract)
  *
+ * @author Etya Lichtman and Orly Salem
  */
 abstract class Light {
     /**

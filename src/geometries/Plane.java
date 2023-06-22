@@ -4,11 +4,15 @@ import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
 
-import javax.imageio.event.IIOReadProgressListener;
 import java.util.List;
 
 import static primitives.Util.*;
 
+/**
+ * Plane class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class Plane extends Geometry {
     /**
      * point on plane
@@ -31,7 +35,7 @@ public class Plane extends Geometry {
     }
 
     /**
-     * Plane constructor, for now normal = null
+     * Plane constructor, normal is v1 cross product v2
      *
      * @param p1 will be the d1 of base point
      * @param p2 will be the d2 of base point
@@ -63,17 +67,23 @@ public class Plane extends Geometry {
         return normal;
     }
 
-
+    /**
+     * geo intersection between plane and given ray
+     *
+     * @param ray         intersection ray
+     * @param maxDistance maximum distance to compute
+     * @return list of one geo point - (plane, intersection)
+     */
     @Override
     protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray, double maxDistance) {
         Point ray_point = ray.getP0();
         Vector ray_vector = ray.getDir();
         double t;
         double nv = normal.dotProduct(ray_vector);  // n * v
+        // ray starts in plane's point
         if (ray_point.equals(p0)) {
             return null;
-        }  // ray starts in plane's point
-        // ray parallel to plane
+        }
         if (isZero(nv))  // ray orthogonal to plane
         {
             t = alignZero(normal.dotProduct(p0.subtract(ray_point)));

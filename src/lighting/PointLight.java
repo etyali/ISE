@@ -4,8 +4,12 @@ import primitives.Color;
 import primitives.Point;
 import primitives.Vector;
 
+/**
+ * Point Light class
+ *
+ * @author Etya Lichtman and Orly Salem
+ */
 public class PointLight extends Light implements LightSource {
-    //private Color intensity;
     /**
      * point light position
      */
@@ -26,9 +30,8 @@ public class PointLight extends Light implements LightSource {
         position = pos;
     }
 
-    /**
-     * setters
-     */
+    //----------------------------SETTERS-------------------------------
+
     public PointLight setkC(double Kc) {
         kC = Kc;
         return this;
@@ -43,9 +46,8 @@ public class PointLight extends Light implements LightSource {
         kQ = Kq;
         return this;
     }
-    /**
-     * getters
-     */
+    //----------------------------GETTERS-------------------------------
+
     /**
      * calculate intensity for point light (e.g bulb)
      *

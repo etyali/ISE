@@ -4,25 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="targil7.1 - shadowing">
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/SuperSamplingTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/unittest/renderer/antiAliasingASSTests.java" afterDir="false" />
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Cylinder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Cylinder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Geometries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometries.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Geometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Geometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Intersectable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Intersectable.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Plane.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Plane.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Polygon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/RadialGeometry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Sphere.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Sphere.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/geometries/Tube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Tube.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/AmbientLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/AmbientLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/DirectionalLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/Light.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/Light.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/LightSource.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/LightSource.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/PointLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/PointLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lighting/SpotLight.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lighting/SpotLight.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Material.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Material.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Point.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Point.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/primitives/Ray.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Ray.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/primitives/Vector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/primitives/Vector.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/RayTracerBasic.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/GeometriesTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/GeometriesTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/geometries/SphereTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/primitives/PointTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraIntegrationsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/LightsTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/LightsTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/RenderTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/RenderTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/scene/Scene.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/scene/Scene.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,7 +191,7 @@
       <workItem from="1677159220244" duration="6337000" />
       <workItem from="1677416379985" duration="85000" />
       <workItem from="1677488840637" duration="13904000" />
-      <workItem from="1687120378173" duration="31272000" />
+      <workItem from="1687120378173" duration="37962000" />
     </task>
     <task id="LOCAL‎-00001" summary="integration">
       <created>1685879631279</created>
@@ -235,7 +242,14 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687081549668</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)">
+      <created>1687438660117</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687438660117</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -261,7 +275,8 @@
     <MESSAGE value="final targil 6  - need documantation" />
     <MESSAGE value="final targil 6  - need documentation" />
     <MESSAGE value="targil7.1 - shadowing" />
-    <option name="LAST_COMMIT_MESSAGE" value="targil7.1 - shadowing" />
+    <MESSAGE value="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)" />
+    <option name="LAST_COMMIT_MESSAGE" value="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,6 +4,11 @@ import primitives.Color;
 import primitives.Point;
 import primitives.Vector;
 
+/**
+ * Directional Light class
+ *
+ * @author Etya Livhtman and Orly Salem
+ */
 public class DirectionalLight extends Light implements LightSource {
     /**
      * directional light direction vector
@@ -21,6 +26,7 @@ public class DirectionalLight extends Light implements LightSource {
         direction = dir.normalize();
     }
 
+    //----------------------------GETTERS-------------------------------
     @Override
     public Color getIntensity(Point p) {
         return super.getIntensity();
