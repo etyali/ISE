@@ -15,9 +15,6 @@ public class Triangle extends Polygon {
      */
     public Triangle(Point... vertices) throws Exception {
         super(vertices);
-        if (vertices.length != 3) {
-            throw new IllegalArgumentException("A Triangle can't have other than 3 vertices");
-        }
     }
 
     /**
