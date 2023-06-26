@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="5 (not finished)">
-      <change afterPath="$PROJECT_DIR$/src/unittest/geometries/GeometriesTest.java" afterDir="false" />
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="complete documentation">
+      <change afterPath="$PROJECT_DIR$/src/renderer/PixelManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/geometries/Triangle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/geometries/Triangle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/geometries/GeometriesTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/antiAliasingASSTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/ImprovementsTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +18,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Interface" />
         <option value="Class" />
-        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -57,11 +57,11 @@
       <recent name="geometries" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\ISE\ISE5783_7998_8728\src\renderer" />
+      <recent name="C:\ISE\ISE5783_7998_8728\src\unittest\renderer" />
+      <recent name="C:\ISE\ISE5783_7998_8728\src\unittest\lighting" />
       <recent name="C:\ISE\ISE\src\unittest\renderer" />
       <recent name="C:\ISE\ISE\src\renderer" />
-      <recent name="C:\ISE\ISE\src\primitives" />
-      <recent name="C:\ISE\ISE\src\unittest" />
-      <recent name="C:\ISE\ISE5783_7998_8728\src\test" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -70,70 +70,8 @@
       <recent name="geometries" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.GeometriesTest.findIntersections">
-    <configuration name="CameraIntegrationsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraIntegrationsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CameraIntegrationsTest.testIntersectionsRaySphere" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraIntegrationsTest" />
-      <option name="METHOD_NAME" value="testIntersectionsRaySphere" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CameraIntegrationsTest.testIntersectionsRayTriangle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraIntegrationsTest" />
-      <option name="METHOD_NAME" value="testIntersectionsRayTriangle" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CameraTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ISE5783_7998_8728" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="unittest.renderer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="unittest.renderer" />
-      <option name="MAIN_CLASS_NAME" value="unittest.renderer.CameraTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="GeometriesTest.findIntersections" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GeometriesTest">
+    <configuration name="GeometriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ISE5783_7998_8728" />
       <extension name="coverage">
         <pattern>
@@ -143,7 +81,70 @@
       </extension>
       <option name="PACKAGE_NAME" value="unittest.geometries" />
       <option name="MAIN_CLASS_NAME" value="unittest.geometries.GeometriesTest" />
-      <option name="METHOD_NAME" value="findIntersections" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImprovementsTests.basicRenderMultiColorTestSuperSampling" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ImprovementsTests" />
+      <option name="METHOD_NAME" value="basicRenderMultiColorTestSuperSampling" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImprovementsTests.multiThreadingOffTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ImprovementsTests" />
+      <option name="METHOD_NAME" value="multiThreadingOffTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImprovementsTests.multiThreadingOnTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ImprovementsTests" />
+      <option name="METHOD_NAME" value="multiThreadingOnTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ImprovementsTests.multiThreadingTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ISE5783_7998_8728" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="unittest.renderer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="unittest.renderer" />
+      <option name="MAIN_CLASS_NAME" value="unittest.renderer.ImprovementsTests" />
+      <option name="METHOD_NAME" value="multiThreadingTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -151,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.GeometriesTest.findIntersections" />
-        <item itemvalue="JUnit.CameraIntegrationsTest" />
-        <item itemvalue="JUnit.CameraIntegrationsTest.testIntersectionsRaySphere" />
-        <item itemvalue="JUnit.CameraTest" />
-        <item itemvalue="JUnit.CameraIntegrationsTest.testIntersectionsRayTriangle" />
+        <item itemvalue="JUnit.GeometriesTest" />
+        <item itemvalue="JUnit.ImprovementsTests.multiThreadingOffTest" />
+        <item itemvalue="JUnit.ImprovementsTests.multiThreadingOnTest" />
+        <item itemvalue="JUnit.ImprovementsTests.multiThreadingTest" />
+        <item itemvalue="JUnit.ImprovementsTests.basicRenderMultiColorTestSuperSampling" />
       </list>
     </recent_temporary>
   </component>
@@ -170,6 +171,7 @@
       <workItem from="1677159220244" duration="6337000" />
       <workItem from="1677416379985" duration="85000" />
       <workItem from="1677488840637" duration="13904000" />
+      <workItem from="1687120378173" duration="48785000" />
     </task>
     <task id="LOCAL‎-00001" summary="integration">
       <created>1685879631279</created>
@@ -199,22 +201,46 @@
       <option name="project" value="LOCAL‎" />
       <updated>1685952093005</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL‎-00005" summary="final targil 4">
+      <created>1685995652488</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL‎-00005" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1685995652488</updated>
+    </task>
+    <task id="LOCAL‎-00006" summary="final targil 6  - need documentation">
+      <created>1686694984661</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1686694984661</updated>
+    </task>
+    <task id="LOCAL‎-00007" summary="targil7.1 - shadowing">
+      <created>1687081549668</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687081549668</updated>
+    </task>
+    <task id="LOCAL‎-00008" summary="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)">
+      <created>1687438660117</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687438660117</updated>
+    </task>
+    <task id="LOCAL‎-00009" summary="complete documentation">
+      <created>1687472085325</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687472085325</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.History.Properties">
-    <option name="COLUMN_ID_ORDER">
-      <list>
-        <option value="Default.Root" />
-        <option value="Default.Author" />
-        <option value="Default.Date" />
-        <option value="Default.Subject" />
-        <option value="Space.CommitStatus" />
-      </list>
-    </option>
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -232,16 +258,17 @@
     <MESSAGE value="integration" />
     <MESSAGE value="4-start test find intersection Ray sphere" />
     <MESSAGE value="4-start function construct ray" />
-    <option name="LAST_COMMIT_MESSAGE" value="4-start function construct ray" />
+    <MESSAGE value="final targil 4" />
+    <MESSAGE value="final targil 6  - need documantation" />
+    <MESSAGE value="final targil 6  - need documentation" />
+    <MESSAGE value="targil7.1 - shadowing" />
+    <MESSAGE value="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)" />
+    <MESSAGE value="complete documentation" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete documentation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/geometries/Tube.java</url>
-          <line>58</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.IllegalArgumentException" package="java.lang" />
           <option name="timeStamp" value="12" />

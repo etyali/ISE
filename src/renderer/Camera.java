@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.MissingResourceException;
 import java.util.Random;
 
+import renderer.PixelManager;
+
 import static primitives.Util.*;
 
 /**
@@ -57,6 +59,10 @@ public class Camera {
      * level for adaptive super sampling (AA)
      */
     private int maxLevelAdaptiveSuperSampling = 3;
+    /**
+     * we want enough threads but not too much
+     */
+    private int threadCount = 3;
 
     //-----------------------------------------------------------
     //CONSTRUCTOR
@@ -234,6 +240,28 @@ public class Camera {
     }
 
     /**
+     * turn on multi threading improvement
+     *
+     * @param count new thread count
+     * @return camera instance
+     */
+    public Camera multiThreadingOn(int count) {
+        if (count < 1) throw new IllegalArgumentException("thread count can must be positive");
+        this.threadCount = count;
+        return this;
+    }
+
+    /**
+     * torn off multi threading improvement
+     *
+     * @return camera instance
+     */
+    public Camera multiThreadingOff() {
+        this.threadCount = 1;
+        return this;
+    }
+
+    /**
      * construct Ray - create ray in the given resolution
      *
      * @param Nx number of columns
@@ -303,7 +331,6 @@ public class Camera {
                 || rayTracer == null || imageWriter == null) {
             throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
         }
-
         int nX = imageWriter.getNx();
         int nY = imageWriter.getNy();
         for (int i = 0; i < nX; ++i) {
@@ -328,6 +355,7 @@ public class Camera {
         }
         int nX = imageWriter.getNx();
         int nY = imageWriter.getNy();
+        // construct beam of rays through every pixel
         for (int i = 0; i < nX; i++) {
             for (int j = 0; j < nY; j++) {
                 Color color = castBeam(j, i, nX, nY);
@@ -356,6 +384,56 @@ public class Camera {
                 imageWriter.writePixel(j, i, color);
             }
         }
+        return this;
+    }
+
+    /**
+     * render new image with multi threading improvement
+     *
+     * @return camera instance
+     */
+    public Camera renderImageMultiThreading() {
+        // check exception
+        if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0
+                || rayTracer == null || imageWriter == null) {
+            throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
+        }
+        int nX = imageWriter.getNx();
+        int nY = imageWriter.getNy();
+        new PixelManager(nX, nY, 60);
+        while (threadCount-- > 0) {
+            new Thread(() -> {
+                for (PixelManager pixel = new PixelManager(nX, nY, 60); pixel.nextPixel() != null; pixel.pixelDone())
+                    imageWriter.writePixel(pixel.getcCol(), pixel.getcRow(), castRay(pixel.getcCol(), pixel.getcRow(), nX, nY));
+            }).start();
+        }
+        // pixel.wait to finish
+        return this;
+    }
+
+    /**
+     * render new image with multi threading and adaptive super sampling improvements
+     *
+     * @return camera instance
+     */
+    public Camera renderImageMultiThreadingASS() {
+        // check exception
+        if (v_up == null || v_to == null || v_right == null || distance == 0 || p0 == null || width == 0 || height == 0
+                || rayTracer == null || imageWriter == null) {
+            throw new MissingResourceException("can not render image when one of camera's field is null", "", "");
+        }
+        int nX = imageWriter.getNx();
+        int nY = imageWriter.getNy();
+        new PixelManager(nX, nY, 60);
+        while (threadCount-- > 0) {
+            new Thread(() -> {
+                for (PixelManager pixel = new PixelManager(nX, nY, 60); pixel.nextPixel() != null; pixel.pixelDone()) {
+                    Color color = castBeamASS(pixel.getcCol(), pixel.getcRow(), nX, nY);
+                    imageWriter.writePixel(pixel.getcCol(), pixel.getcRow(), color);
+                }
+            }).start();
+        }
+        // pixel.wait to finish
         return this;
     }
 
