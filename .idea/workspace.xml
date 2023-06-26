@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="complete documentation">
-      <change afterPath="$PROJECT_DIR$/src/renderer/PixelManager.java" afterDir="false" />
+    <list default="true" id="8d702f74-6cd7-4ddd-b724-95c26d27f4b2" name="Changes" comment="multi threading">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/renderer/Camera.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/renderer/Camera.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/antiAliasingASSTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/ImprovementsTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/CameraTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/CameraTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/ReflectionRefractionTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/ReflectionRefractionTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/unittest/renderer/SuperSamplingTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/unittest/renderer/SuperSamplingTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -171,7 +171,7 @@
       <workItem from="1677159220244" duration="6337000" />
       <workItem from="1677416379985" duration="85000" />
       <workItem from="1677488840637" duration="13904000" />
-      <workItem from="1687120378173" duration="48785000" />
+      <workItem from="1687120378173" duration="49022000" />
     </task>
     <task id="LOCAL‎-00001" summary="integration">
       <created>1685879631279</created>
@@ -236,7 +236,21 @@
       <option name="project" value="LOCAL‎" />
       <updated>1687472085325</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL‎-00010" summary="multi threading">
+      <created>1687781126568</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL‎-00010" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687781126568</updated>
+    </task>
+    <task id="LOCAL‎-00011" summary="multi threading">
+      <created>1687781159034</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL‎-00011" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1687781159034</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +278,8 @@
     <MESSAGE value="targil7.1 - shadowing" />
     <MESSAGE value="mini project stage 1 - anti aliasing improvement (super sampling and adaptive super sampling)" />
     <MESSAGE value="complete documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete documentation" />
+    <MESSAGE value="multi threading" />
+    <option name="LAST_COMMIT_MESSAGE" value="multi threading" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

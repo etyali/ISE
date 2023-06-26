@@ -14,7 +14,8 @@ import primitives.Color;
 
 /**
  * tests for improvement super sampling
- * author Etya Lichtman and Orly Salem
+ *
+ * @author Etya Lichtman and Orly Salem
  */
 public class SuperSamplingTests {
     /**
